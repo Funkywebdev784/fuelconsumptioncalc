@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fuel Consumption Calc</title>
+	<meta name="viewport" content="width=device-width";>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div>
+	<div class="topnav">
+
+		<header><b>Fuel</b></header><br><header> <b>Consumption</b></header><br><header><b> Calc</b></header></div>
+
+		<div class="container">
+			<form class="form">
+
+
+			<label for="fuel">Total Fuel in Litres</label>
+			<input type="number" class="input" name="fuel" id="fuel"><br><br>
+
+			<label for="price">Price per Litre</label>
+			<input type="number" class="input" name="price" id="price" step='0.01'><br><br>
+
+			<label for="miles">Trip mileage</label>
+			<input type="number" class="input" name="miles" id="miles"><br><br>
+
+			<input type="button" class="button" name="sum" value="Sum"  onclick="calculate()"/><br><br>
+
+			<label for="result" >Price per Mile £</label>
+			<input type="text" class="input" name="result" id="result" onchange ="toFixed(2)"/><br><br>
+			<input type="button" class="button" value="Reset" onclick="reset()" />
+			</form>
+		</div>
+		
+</div>
+
+	<script>
+		
+			
+
+		function calculate()
+
+		{
+			var ltr = Number (document.getElementById("fuel").value);
+			var p = Number (document.getElementById("price").value);
+			var m = Number (document.getElementById("miles").value);
+			var sum = (ltr * p) / m;
+
+			document.getElementById("result").value = sum.toFixed(2);
+		
+
+
+		}
+
+		function reset()
+	{
+		document.getElementById("fuel").value = "";
+		document.getElementById("price").value = "";
+		document.getElementById("miles").value = "";
+		document.getElementById("result").value = "";
+	}
+
+
+
+
+	</script>
+
+</body>
+</html>
